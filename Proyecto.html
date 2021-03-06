@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Environment + Modelos3D</title>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
+    <script src="//cdn.rawgit.com/donmccurdy/aframe-physics-system/v4.0.1/dist/aframe-physics-system.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.0/dist/aframe-extras.min.js"></script>
+</head>
+
+<body>
+    <a-scene physics="gravity:-9.8">
+        <a-assets>
+     
+            <a-asset-item id="casa" src="assets/modelados/appt.obj"></a-asset-item>
+            <a-asset-item id="mtlCasa" src="assets/modelados/appt.mtl"></a-asset-item>
+
+          
+
+
+             <img id="sunsen" src="assets/img/City.jpeg">
+          
+        </a-assets>
+
+        <a-entity id="rig" movement-controls kinematic-body>
+            <a-entity camera position="11.876 1.8 20.031" look-controls="pointerLockEnabled:true"></a-entity>
+        </a-entity>
+        
+        <a-plane scale="50 50 1" position="2.809 0 1.754 " rotation="-90 34.373 0" static-body visible="false"></a-plane>
+        <a-entity obj-model="obj:#casa;mtl:#mtlCasa" scale="0.010 0.010 0.010" position="14.081 -0.116 13.680" rotation="0 -55.484 0" shadow static-body="shape:mesh"></a-entity>
+      
+
+
+        <a-sky src="#sunsen"></a-sky>
+      
+    </a-scene>
+</body>
+
+</html>
